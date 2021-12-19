@@ -29,9 +29,10 @@ void InitPoints(int &N, int &M, double &eps, std::vector<std::vector<Point>> &po
     }
 }
 
-void pointsTOfile(int &N, int &M, std::vector<std::vector<Point>> points) {
+void pointsTOfile(std::string file_name,int &N, int &M, std::vector<std::vector<Point>> points) {
     std::ofstream point_file;
-    point_file.open("example.csv");
+    point_file.open(file_name);
+
     for (int j = 0; j < M; ++j) {
         point_file << "X" << "  " << "Y" << "  " << "Z" << "\n";
         for (int i = 0; i < N; ++i) {
@@ -52,13 +53,22 @@ double F(double x, double y) {
     return sin(x * y);
 }
 
-void Boundaries_and_initConditions(int &N, int &M, double &eps, std::vector<std::vector<Point>> &points) {
+void Boundaries_and_initConditions(int &N, int &M, std::vector<std::vector<Point>> &points) {
     T = 0;
-    for (auto p: points) {
 
-    }
 
+        for (int j = 0; j < M; j++) {
+            for (int i = 0; i < N; i++) {
+                if(i==0 || j==0
+                || i==N || j==M){
+                    points[i][j].value = F(points[i][j].x,points[i][j].y);
+                }
+
+            }
+        }
 }
+
+
 
 int main() {
 
@@ -71,10 +81,13 @@ int main() {
     std::vector<std::vector<Point>> points(N, std::vector<Point>(M));
 
     InitPoints(N, M, eps, points);
-    pointsTOfile(N, M, points);
+    pointsTOfile("initPoints.csv",N, M, points);
+
+    Boundaries_and_initConditions(N,M,points);
+    pointsTOfile("boundaries.csv",N,M,points);
 
 
-    std::cout << "Hello, World!" << std::endl;
+    std::cout << "Computations Finish" << std::endl;
     return 0;
 }
 
