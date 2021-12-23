@@ -1,7 +1,5 @@
 # ninja log v5
-3	604	6616239446367173	CMakeFiles/untitled2.dir/main.cpp.obj	b84f407e52c68e76
-604	741	6616239447738420	untitled2.exe	82ba597aea1c5c2e
-14	367	6616504078489625	CMakeFiles/untitled2.dir/Method.cpp.obj	3d8b342dc73245ce
 3	527	6616504080091082	CMakeFiles/untitled2.dir/main.cpp.obj	b84f407e52c68e76
-17	640	6616504081222109	CMakeFiles/untitled2.dir/Grid.cpp.obj	dc39ad85e9e9ba7e
 640	900	6616504083794453	untitled2.exe	2ccb4633a3a95f4b
+14	367	6616504078489625	CMakeFiles/untitled2.dir/Method.cpp.obj	3d8b342dc73245ce
+17	640	6616504081222109	CMakeFiles/untitled2.dir/Grid.cpp.obj	dc39ad85e9e9ba7e
