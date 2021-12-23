@@ -19,8 +19,10 @@ namespace diffur {
     }
 
     void Grid::Init() {
-        for (int j = 0; j < M; ++j) {
-            for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j)
+        {
+            for (int i = 0; i < N; ++i)
+            {
                 Point p;
                 p.x += i * Eps;
                 p.y += j * Eps;
@@ -49,7 +51,21 @@ namespace diffur {
         }
         point_file.close();
     }
+    void Grid::Solve()
+    {
+        for (int j = 1; j < M-1; j++)
+        {
+            for (int i = 1; i < N-1; i++)
+            {
 
+                {
+                    points[i][j].value = (points[i+1][j].value+points[i-1][j].value+points[i][j+1].value+points[i][j-1].value)/4;
+                }
+            }
+
+
+        }
+    }
 
     void Grid::boundaries()
     {
@@ -72,4 +88,6 @@ namespace diffur {
     {
         return sin(x*y);
     }
+
+
 }

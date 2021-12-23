@@ -27,6 +27,8 @@ namespace diffur {
         void Init();
         void PointsTOfile(std::string file_name);
         void boundaries();
+        void Solve();
+
         double F(double x, double y);
         std::vector<std::vector<Point>> points;
 

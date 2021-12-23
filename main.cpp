@@ -32,6 +32,8 @@ int main() {
     Grid g(N,M,eps);
     g.Init();
     g.boundaries();
+    g.Solve();
+    g.PointsTOfile("points.csv");
 
 
 
