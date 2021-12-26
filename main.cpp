@@ -3,6 +3,7 @@
 #include <fstream>
 #include <math.h>
 #include "Grid.h"
+#include "Kawahara.h"
 
 /*
  diffur solver*/
@@ -25,25 +26,19 @@ int main() {
     using namespace std;
     using namespace diffur;
 
-    int M = 100;
-    int N = 100;
-    double eps = 0.001;
+//    int M = 100;
+//    int N = 100;
+//    double eps = 0.001;
+//
+//    Grid g(N,M,eps);
+//    g.Init();
+//    g.boundaries();
+//    g.Solve();
+//    g.PointsTOfile("points.txt");
 
-    Grid g(N,M,eps);
-    g.Init();
-    g.boundaries();
-    g.Solve();
-    g.PointsTOfile("points.txt");
+    Kawahara a;
 
-
-
- ; /*  InitPoints(N, M, eps, points);
-    pointsTOfile("initPoints.csv",N, M, points);
-
-    Boundaries_and_initConditions(N,M,points);
-    PointsTOfile("boundaries.csv",N,M,points);
-*/
-
+    a.solve();
     std::cout << "Computations Finish" << std::endl;
     return 0;
 }
