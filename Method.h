@@ -7,14 +7,18 @@
 
 
 #include <string>
+#include <cmath>
 
 class Method
         {
         public:
+
+
     Method(int n, int m, double eps);
     virtual void Init();
     virtual void PointsTOfile(std::string file_name);
     virtual void boundaries();
+    virtual void solve();
     virtual double F(double x, double y);
 
 };

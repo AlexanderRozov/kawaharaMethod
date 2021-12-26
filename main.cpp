@@ -33,7 +33,7 @@ int main() {
     g.Init();
     g.boundaries();
     g.Solve();
-    g.PointsTOfile("points.csv");
+    g.PointsTOfile("points.txt");
 
 
 
